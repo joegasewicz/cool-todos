@@ -5,8 +5,11 @@ Linux desktop app that manages your daily todos
 
 ## Build
 Open the `cool_todos.cbp` file.
+
 Link Libraries:
- `sqlite3`
+ ```
+ sqlite3
+ ```
 
 Other Link Options:
 ```
