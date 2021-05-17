@@ -4,7 +4,7 @@ Linux desktop app that manages your daily todos
 ## Installation
 
 ## Build
-Open the `cool_todos.cbp` file.
+Open the `cool_todos.cbp` file in Code::Blocks.
 
 Link Libraries:
  ```

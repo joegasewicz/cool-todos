@@ -1,10 +1,11 @@
 # depslib dependency file v1.0
-1621275428 source:/home/joe/Documents/Projects/cool-todos/cool_todos/main.c
+1621294688 source:/home/joe/Documents/Projects/cool-todos/cool_todos/main.c
 	<stdio.h>
 	<stdlib.h>
 	<glib.h>
 	<gtk/gtk.h>
 	<sqlite3.h>
+	<string.h>
 
 1588948630 /usr/include/gtk-3.0/gtk/gtk.h
 	<gdk/gdk.h>

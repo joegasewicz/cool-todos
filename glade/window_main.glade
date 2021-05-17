@@ -44,18 +44,20 @@
                     <property name="label" translatable="yes">Name</property>
                   </object>
                   <packing>
+                    <property name="x">-28</property>
                     <property name="y">52</property>
                   </packing>
                 </child>
                 <child>
                   <object class="GtkEntry" id="entry_name">
                     <property name="width_request">100</property>
-                    <property name="height_request">80</property>
+                    <property name="height_request">40</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="input_purpose">name</property>
                   </object>
                   <packing>
-                    <property name="y">124</property>
+                    <property name="y">105</property>
                   </packing>
                 </child>
                 <child>
@@ -71,6 +73,30 @@
                   <packing>
                     <property name="x">289</property>
                     <property name="y">312</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="lb_description">
+                    <property name="width_request">100</property>
+                    <property name="height_request">80</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">Description</property>
+                  </object>
+                  <packing>
+                    <property name="x">-9</property>
+                    <property name="y">160</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="entry_descri">
+                    <property name="width_request">100</property>
+                    <property name="height_request">40</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                  </object>
+                  <packing>
+                    <property name="y">214</property>
                   </packing>
                 </child>
               </object>
