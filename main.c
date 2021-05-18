@@ -133,8 +133,6 @@ int create_tables(void)
     "completed BOOLEAN,"
     "active BOOLEAN"
     ");");
-
-    printf("%s\n", sql_str);
     asprintf(&sql, sql_str);
 
     dbc = get_db_conn();
@@ -149,7 +147,6 @@ int create_tables(void)
     }
     sqlite3_close(dbc->db);
     free(dbc);
-    free(sql);
     return 0;
 }
 
@@ -161,9 +158,24 @@ void on_btn_create_clicked(GtkButton *button, new_todo_widgets *new_todo)
     char *err_msg = 0;
     db_conn *dbc;
 
-//    asprintf(
-//        &sql,
-//       "INSERT INTO todo VALUES ()"
-//   )
+    asprintf(
+        &sql,
+        "INSERT INTO todos (name, description, created, updated, completed, active)"
+        "VALUES ('%s', '%s', datetime(), NULL, FALSE, TRUE);",
+        gtk_entry_get_text(new_todo->w_ent_name),
+        gtk_entry_get_text(new_todo->w_ent_description)
+    );
 
+    dbc = get_db_conn();
+    rc = sqlite3_exec(dbc->db, sql, 0, 0, &err_msg);
+
+    if (rc != SQLITE_OK)
+    {
+        fprintf(stderr, "Error inserting new todo: %s\n", err_msg);
+        sqlite3_free(err_msg);
+        sqlite3_close(dbc->db);
+        return 1;
+    }
+    sqlite3_close(dbc->db);
+    free(dbc);
 }
