@@ -1,6 +1,10 @@
 # Cool Todos
 Linux desktop app that manages your daily todos
 
+
+![todos_new](./assets/todos_new.png)
+
+
 ## Installation
 
 ## Build

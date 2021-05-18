@@ -32,7 +32,7 @@ db_conn *get_db_conn(void)
 
     rc = sqlite3_open("cool_todos.db", &db);
 
-    if(rc != SQLITE_OK)
+    if (rc != SQLITE_OK)
     {
         fprintf(stderr, "Couldn't connect to database: %s\n", sqlite3_errmsg(db));
     }
@@ -51,7 +51,7 @@ int create_db(void)
     char *err_msg = 0;
 
     int rc = sqlite3_open("cool_todos.db", &db);
-    if(rc != SQLITE_OK)
+    if (rc != SQLITE_OK)
     {
         fprintf(stderr, "Error trying to open database: %s\n", sqlite3_errmsg(db));
         return 1;
@@ -122,7 +122,9 @@ int create_tables(void)
     db_conn *dbc;
     char *sql_str;
 
-    strcpy(sql_str,"CREATE TABLE IF NOT EXISTS todos("
+    strcpy(
+    sql_str,
+    "CREATE TABLE IF NOT EXISTS todos("
     "id INTEGER PRIMARY KEY AUTOINCREMENT,"
     "name CHAR(50) NOT NULL,"
     "description CHAR(50) NOT NULL,"
