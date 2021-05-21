@@ -15,6 +15,10 @@ typedef struct {
 typedef struct {
     GtkWidget *w_ent_name;
     GtkWidget *w_ent_description;
+    GtkWidget *lb_success_todo_create;
+    GtkWidget *lb_new_todo_name;
+    GtkWidget *lb_new_todo_description;
+    GtkWidget *txtr_show_new_todo;
 } new_todo_widgets;
 // ======================================
 //  Prototypes
@@ -95,6 +99,10 @@ int main(int argc, char *argv[])
     // Data
     new_todo->w_ent_name = GTK_WIDGET(gtk_builder_get_object(builder, "entry_name"));
     new_todo->w_ent_description = GTK_WIDGET(gtk_builder_get_object(builder, "entry_description"));
+    new_todo->lb_success_todo_create = GTK_WIDGET(gtk_builder_get_object(builder, "lb_success_todo_create"));
+    new_todo->lb_new_todo_name = GTK_WIDGET(gtk_builder_get_object(builder, "lb_new_todo_name"));
+    new_todo->lb_new_todo_description = GTK_WIDGET(gtk_builder_get_object(builder, "lb_new_todo_description"));
+    new_todo->txtr_show_new_todo = GTK_WIDGET(gtk_builder_get_object(builder, "txtr_show_new_todo"));
 
 
     gtk_builder_connect_signals(builder, new_todo);
@@ -150,7 +158,7 @@ int create_tables(void)
     return 0;
 }
 
-void on_btn_create_clicked(GtkButton *button, new_todo_widgets *new_todo)
+void on_btn_create_todo_clicked(GtkButton *button, new_todo_widgets *new_todo)
 {
 
     int rc;
@@ -178,4 +186,15 @@ void on_btn_create_clicked(GtkButton *button, new_todo_widgets *new_todo)
     }
     sqlite3_close(dbc->db);
     free(dbc);
+    gtk_widget_hide(new_todo->w_ent_name);
+    gtk_widget_hide(new_todo->w_ent_description);
+    gtk_widget_hide(new_todo->lb_new_todo_name);
+    gtk_widget_hide(new_todo->lb_new_todo_description);
+    gtk_widget_hide(button);
+    gtk_widget_show(new_todo->lb_success_todo_create);
+
+
+    gtk_widget_show(new_todo->txtr_show_new_todo);
+    // TODO gtk_text_view_set_text
 }
+

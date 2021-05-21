@@ -36,7 +36,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <child>
-                  <object class="GtkLabel" id="lb_name">
+                  <object class="GtkLabel" id="lb_new_todo_name">
                     <property name="width_request">100</property>
                     <property name="height_request">80</property>
                     <property name="visible">True</property>
@@ -68,7 +68,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
-                    <signal name="clicked" handler="on_btn_create_clicked" swapped="no"/>
+                    <signal name="clicked" handler="on_btn_create_todo_clicked" swapped="no"/>
                   </object>
                   <packing>
                     <property name="x">289</property>
@@ -76,7 +76,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkLabel" id="lb_description">
+                  <object class="GtkLabel" id="lb_new_todo_description">
                     <property name="width_request">100</property>
                     <property name="height_request">80</property>
                     <property name="visible">True</property>
@@ -97,6 +97,29 @@
                   </object>
                   <packing>
                     <property name="y">214</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="lb_success_todo_create">
+                    <property name="width_request">100</property>
+                    <property name="height_request">80</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">Sucessfully created new todo!</property>
+                  </object>
+                  <packing>
+                    <property name="x">120</property>
+                    <property name="y">292</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkTextView" id="txtr_show_new_todo">
+                    <property name="width_request">100</property>
+                    <property name="height_request">80</property>
+                    <property name="can_focus">True</property>
+                  </object>
+                  <packing>
+                    <property name="x">177</property>
+                    <property name="y">44</property>
                   </packing>
                 </child>
               </object>
